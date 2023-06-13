@@ -1,0 +1,148 @@
+body {
+    background-color: #ecf8ff;
+    background-image: url("photos\Asset 1@3x.png");
+    font-family: serif;
+    color: #001726;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    padding: 0.5rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 0.5rem;
+    transition: .5s
+}
+
+header > img {
+    max-width: 100%;
+    min-width: 20rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    display: flexbox;
+    align-items: center;
+    background-color: #001726;
+    border-radius: 0.25rem;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px;
+}
+
+nav a {
+    font-size: 1.5rem;
+    color: #ecf8ff;
+    text-decoration: none;
+}
+
+nav a:link{
+    font-size: 1.5rem;
+    transition: .5s;
+}
+
+nav a:hover{
+    font-size: 2rem;
+    color: white;
+    transition: .5s;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 680px){
+    section {
+        flex-direction: row;
+    }
+}
+
+article {
+    flex: 1;
+    margin: 1px;
+}
+
+main > :first-child {
+    color: #ecf8ff;
+    background-image: conic-gradient(at 0% 0%, transparent, #001726, transparent), url('photos/Wedding-Band-Banner.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: 1s;
+}
+
+main > :first-child:hover {
+    font-size: 1.5em;
+    transition: .5s;
+}
+
+main p {
+    padding: 0.5rem;
+}
+
+main > :nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+}
+
+main :nth-child(2) article {
+    background-color: #001726;
+    color: #ecf8ff;
+    border-radius: .25rem;
+    transition: 0.5s
+}
+
+main :nth-child(2) article:hover {
+    flex-grow: 2;
+    transition: .5s;
+}
+
+main :nth-child(2) article:hover h2 {
+    font-size: 1.5em;
+    transition: 0.25s;
+}
+
+main :nth-child(2) p {
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+main :nth-child(2) article:hover p {
+    font-size: 1.5em;
+    transition: 0.5s;
+}
+
+main img {
+    max-width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+footer {
+    display: flex;
+}
+
+footer > div > img {
+    max-width: 7rem;
+}
+
+footer div {
+    flex: 1;
+    font-size: .7rem;
+}
