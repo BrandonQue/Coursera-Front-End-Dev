@@ -30,7 +30,7 @@ function App() {
   };
  
   function resetInput(e) { 
-    inputRef.current.reset();
+    inputRef.current.value = null;
   }; 
  
   function resetResult(e) { 
