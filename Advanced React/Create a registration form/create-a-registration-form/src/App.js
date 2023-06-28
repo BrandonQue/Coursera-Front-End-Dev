@@ -86,7 +86,7 @@ function App() {
               type = "password"
               placeholder="Password" 
             />
-            {password.value.length < 8 ? <PasswordErrorMessage />: null}
+            {password.length < 8 ? <PasswordErrorMessage />: null}
           </div>
           <div className="Field">
             <label>
