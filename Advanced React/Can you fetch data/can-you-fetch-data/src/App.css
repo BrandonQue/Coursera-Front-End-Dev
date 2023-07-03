@@ -1,0 +1,19 @@
+button {
+  font-size: large;
+  margin: 20px;
+  border-radius: 10px;
+  border-color: gray;
+}
+
+.add-to-cart-button {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.add-to-cart-button.added {
+  background-color: green;
+  width: 120px;
+  height: 40px;
+}
