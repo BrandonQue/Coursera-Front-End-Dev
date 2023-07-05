@@ -1,46 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import "./App.css"
+import React from "react";
 
-const useAddToCartAnimation = () => {
-  const [isAddedToCart, setIsAddedToCart] = useState(false);
+function App() {
+  const [user, setUser] = React.useState([]);
 
-  useEffect(() => {
-    let timeout;
-
-    if (isAddedToCart) {
-      timeout = setTimeout(() => {
-        setIsAddedToCart(false);
-      }, 1000);
-    }
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [isAddedToCart]);
-
-  const handleAddToCart = () => {
-    setIsAddedToCart(true);
+  const fetchData = () => {
+    fetch("https://randomuser.me/api/?results=1")
+    .then((response) => response.json())
+    .then((data) => setUser(data))
   };
 
-  return {
-    isAddedToCart,
-    handleAddToCart,
-  };
-};
+  React.useEffect(() => {
+    fetchData();
+  }, []);
 
-const App = () => {
-  const { isAddedToCart, handleAddToCart } = useAddToCartAnimation();
-
-  return (
-    <div>
-      <button
-        onClick={handleAddToCart}
-        className={`add-to-cart-button ${isAddedToCart ? 'added' : ''}`}
-      >
-        {isAddedToCart ? 'Added to Cart' : 'Add to Cart'}
-      </button>
+  return Object.keys(user).length > 0 ? (
+    <div style={{padding: "40px"}}>
+      <h1>Customer data</h1>
+      <h2>Name: {user.results[0].name.first}</h2>
+      <img src={user.results[0].picture.large} alt="" />
     </div>
+  ) : (
+    <h1>Data pending...</h1>
   );
-};
+}
 
 export default App;
